@@ -1,0 +1,16 @@
+<table class="table caption-top">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tarea of tareas; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ tarea.titulo }}</td>
+      <td>{{ tarea.descripcion }}</td>
+    </tr>
+  </tbody>
+</table>

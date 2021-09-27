@@ -1,0 +1,35 @@
+<form (ngSubmit)="onClick()" #miFormulario="ngForm">
+  <div class="mb-3">
+    <label class="form-label">Titulo</label>
+    <input type="text" class="form-control" name="titulo" ngModel required />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Descripción</label>
+    <input
+      type="text"
+      class="form-control"
+      name="descripcion"
+      ngModel
+      required
+    />
+  </div>
+  <button type="submit" class="btn btn-primary float-end">Crear</button>
+</form>
+<br />
+<br />
+<div class="row">
+  <div class="col">
+    <h3>Valid</h3>
+    <pre>{{ miFormulario.valid }}</pre>
+    <hr />
+    <h3>Value</h3>
+    <pre>{{ miFormulario.value | json }}</pre>
+    <hr />
+    <h3>Pristin</h3>
+    <pre>{{ miFormulario.pristine }}</pre>
+    <hr />
+    <h3>Touched</h3>
+    <pre>{{ miFormulario.touched }}</pre>
+    <hr />
+  </div>
+</div>
