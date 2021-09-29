@@ -1,10 +1,10 @@
 <h1>Lista de tares</h1>
 <hr />
 <div class="row">
-  <div class="col">
+  <div class="col-6">
     <app-form-todo (tareaCreada)="onTareaCreada($event)"></app-form-todo>
   </div>
-  <div class="col">
+  <div class="col-6">
     <app-list-todo
       [tareas]="arrTareas"
       *ngIf="arrTareas.length > 0"

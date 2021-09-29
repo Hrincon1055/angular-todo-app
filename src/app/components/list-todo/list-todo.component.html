@@ -1,4 +1,4 @@
-<table class="table caption-top">
+<!-- <table class="table caption-top">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -13,4 +13,29 @@
       <td>{{ tarea.descripcion }}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
+<div class="row gap-2">
+  <div
+    *ngFor="let tarea of tareas; let i = index"
+    class="card"
+    style="width: 18rem"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ tarea.titulo }}</h5>
+      <p class="card-text">
+        {{ tarea.descripcion }}
+      </p>
+      <!-- <p class="card-text">
+        {{ tarea.estado }}
+      </p> -->
+      <div class="col">
+        <a class="btn btn-warning float-end" (click)="borrarTarea(i)">Borrar</a>
+        <a
+          [ngClass]="tarea.estado ? 'btn btn-primary' : 'btn btn-success'"
+          (click)="completarTarea(tarea)"
+          >{{ tarea.estado ? "Completada" : "Pendiente" }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

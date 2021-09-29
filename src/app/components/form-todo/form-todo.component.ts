@@ -14,26 +14,18 @@ import { Tarea } from 'src/app/models/tarea.model';
   styleUrls: ['./form-todo.component.css'],
 })
 export class FormTodoComponent implements OnInit {
-  @ViewChild('miFormulario') miFormulario!: NgForm;
+  // @ViewChild('miFormulario') miFormulario!: NgForm;
   @Output() tareaCreada: EventEmitter<Tarea> = new EventEmitter();
   public nuevaTarea = new Tarea();
 
   //metodos
   onClick() {
-    if (
-      !this.miFormulario.controls.titulo.value.trim() ||
-      !this.miFormulario.controls.descripcion.value.trim()
-    ) {
+    if (!this.nuevaTarea.titulo.trim() || !this.nuevaTarea.descripcion.trim()) {
       return;
     }
-    this.nuevaTarea.titulo = this.miFormulario.controls.titulo.value;
-    this.nuevaTarea.descripcion = this.miFormulario.controls.descripcion.value;
+    this.nuevaTarea.id = Date.now();
     this.tareaCreada.emit(this.nuevaTarea);
-    // this.nuevaTarea = new Tarea();
-    this.miFormulario.reset({
-      titulo: '',
-      descripcion: '',
-    });
+    this.nuevaTarea = new Tarea();
   }
 
   // guardar() {

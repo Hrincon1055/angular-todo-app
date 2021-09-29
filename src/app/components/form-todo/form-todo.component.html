@@ -1,7 +1,13 @@
-<form (ngSubmit)="onClick()" #miFormulario="ngForm">
+<form (ngSubmit)="onClick()">
   <div class="mb-3">
     <label class="form-label">Titulo</label>
-    <input type="text" class="form-control" name="titulo" ngModel required />
+    <input
+      type="text"
+      class="form-control"
+      name="titulo"
+      [(ngModel)]="nuevaTarea.titulo"
+      required
+    />
   </div>
   <div class="mb-3">
     <label class="form-label">Descripción</label>
@@ -9,7 +15,7 @@
       type="text"
       class="form-control"
       name="descripcion"
-      ngModel
+      [(ngModel)]="nuevaTarea.descripcion"
       required
     />
   </div>
@@ -17,7 +23,7 @@
 </form>
 <br />
 <br />
-<div class="row">
+<!-- <div class="row">
   <div class="col">
     <h3>Valid</h3>
     <pre>{{ miFormulario.valid }}</pre>
@@ -32,4 +38,4 @@
     <pre>{{ miFormulario.touched }}</pre>
     <hr />
   </div>
-</div>
+</div> -->
